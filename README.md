@@ -80,18 +80,16 @@ If using another LLM provider like Anthropic or Mistral, update the ChatOpenAI i
 pipenv run uvicorn main:app --reload --log-level debug
 
 Then open your browser to:
-http://127.0.0.1:8000/docs
+http://127.0.0.1:8000/
 
 How to Use the Agent
 Send a request via the FastAPI endpoint or from within Python:
 agent_executor.invoke({"input": "What is 10 times 8 minus 4?"})
 
-Logs are saved to tmp.log.
-
 Observability with OpenTelemetry
 The app instruments both the FastAPI server and LangChain agent with OpenTelemetry. Trace data is exported to Splunk via OTLP.
 
-Telemetry setup is handled in telemetry.py. Be sure your network allows outbound access to:
+Telemetry setup is handled in otel.py. Be sure your network allows outbound access to:
 https://ingest.<SPLUNK_REALM>.signalfx.com/v2/trace
 
 Extending the App
@@ -115,9 +113,6 @@ Cleanup
 To shut down:
 CTRL+C  # to stop uvicorn
 deactivate && pipenv --rm
-
-
-
 
 License
 MIT License 
