@@ -83,10 +83,12 @@ Then open your browser to:
 http://127.0.0.1:8000/
 
 How to Use the Agent
+
 Send a request via the FastAPI endpoint or from within Python:
 agent_executor.invoke({"input": "What is 10 times 8 minus 4?"})
 
 Observability with OpenTelemetry
+
 The app instruments both the FastAPI server and LangChain agent with OpenTelemetry. Trace data is exported to Splunk via OTLP.
 
 Telemetry setup is handled in otel.py. Be sure your network allows outbound access to:
