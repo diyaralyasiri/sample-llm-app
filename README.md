@@ -17,7 +17,7 @@ docker run --rm -it \
   -p 4318:4318 \
   --name splunk-otel-collector \
   quay.io/signalfx/splunk-otel-collector:latest
-
+```
   This command pulls the latest collector image and runs it in the foreground, listening for OTLP data on ports 4317 (gRPC) and 4318 (HTTP). Update the access token and realm to match your Splunk environment.
 
 Ensure the .env file in your project has the same token and realm so the telemetry can be exported successfully.
@@ -36,7 +36,8 @@ Technologies Used
 - OpenTelemetry
 - Splunk Observability Cloud
 - Pipenv for dependency management
-
+  
+```
 Project Structure
 sample-llm-app/
 ├── agent.py           # Defines arithmetic tools and the LLM agent using LangChain
@@ -45,7 +46,7 @@ sample-llm-app/
 ├── Pipfile            # Project dependencies
 ├── .env               # API keys and tokens (not included in repo)
 └── README.md          # This file
-
+```
 Prerequisites
 - Python 3.9+
 - pipenv installed:
@@ -54,10 +55,11 @@ pip install pipenv
 Setup Instructions
 
 1. Clone the Repository
-git clone https://github.com/your-org/sample-llm-app.git
+git clone https://github.com/diyaralyasiri/sample-llm-app.git
 cd sample-llm-app
 
 2. Install Dependencies
+
 pipenv install
 
 This will install all required packages, including:
